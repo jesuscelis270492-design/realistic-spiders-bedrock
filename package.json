@@ -1,0 +1,31 @@
+{
+  "name": "realistic-spiders-bedrock",
+  "version": "1.0.0",
+  "description": "Realistic spiders addon for Minecraft Bedrock with multiple spider species",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"Build process for addon packaging\"",
+    "dev": "echo \"Development mode - watch for changes\"",
+    "test": "echo \"Testing addon structure\"",
+    "package": "echo \"Package addon as .mcaddon\""
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "addon",
+    "spiders",
+    "realistic",
+    "creatures",
+    "mobs"
+  ],
+  "author": "jesuscelis270492-design",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesuscelis270492-design/realistic-spiders-bedrock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jesuscelis270492-design/realistic-spiders-bedrock/issues"
+  },
+  "homepage": "https://github.com/jesuscelis270492-design/realistic-spiders-bedrock#readme"
+}

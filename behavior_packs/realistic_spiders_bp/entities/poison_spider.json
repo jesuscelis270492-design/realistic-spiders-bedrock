@@ -1,0 +1,73 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "realistic_spiders:poison_spider",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:poison_spider_base": {
+        "minecraft:type_family": {
+          "family": ["arthropod", "spider", "hostile"]
+        },
+        "minecraft:health": {
+          "value": 5
+        },
+        "minecraft:movement": {
+          "value": 0.3
+        },
+        "minecraft:physics": {},
+        "minecraft:collision_box": {
+          "width": 0.6,
+          "height": 0.5
+        },
+        "minecraft:scale": {
+          "value": 0.7
+        }
+      },
+      "minecraft:poison_spider_behaviors": {
+        "minecraft:behavior.random_look_around": {
+          "priority": 8
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 2,
+          "speed_multiplier": 1.2,
+          "track_target": true,
+          "reach": 0.7,
+          "damage": 4
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "within_radius": 18,
+          "entity_type": "player",
+          "reevaluate_description": true,
+          "attack_scheduling": "combat"
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "4"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/poison_spider.json"
+      },
+      "minecraft:damage": {
+        "range": 0.7,
+        "damage": 4
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["minecraft:poison_spider_base", "minecraft:poison_spider_behaviors"]
+        }
+      }
+    }
+  }
+}

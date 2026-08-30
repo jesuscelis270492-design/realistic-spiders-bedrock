@@ -1,0 +1,65 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "realistic_spiders:orb_weaver",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:orb_weaver_base": {
+        "minecraft:type_family": {
+          "family": ["arthropod", "spider", "passive"]
+        },
+        "minecraft:health": {
+          "value": 6
+        },
+        "minecraft:movement": {
+          "value": 0.2
+        },
+        "minecraft:physics": {},
+        "minecraft:collision_box": {
+          "width": 1.0,
+          "height": 0.9
+        }
+      },
+      "minecraft:orb_weaver_behaviors": {
+        "minecraft:behavior.random_look_around": {
+          "priority": 8
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 10,
+          "speed_multiplier": 0.5
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1.0,
+          "track_target": true,
+          "reach": 0.8
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 4,
+          "within_radius": 20,
+          "entity_type": "minecraft:insect",
+          "must_see": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "5"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/orb_weaver.json"
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["minecraft:orb_weaver_base", "minecraft:orb_weaver_behaviors"]
+        }
+      }
+    }
+  }
+}

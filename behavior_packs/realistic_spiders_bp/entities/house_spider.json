@@ -1,0 +1,57 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "realistic_spiders:house_spider",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:house_spider_base": {
+        "minecraft:type_family": {
+          "family": ["arthropod", "spider", "peaceful"]
+        },
+        "minecraft:health": {
+          "value": 3
+        },
+        "minecraft:movement": {
+          "value": 0.15
+        },
+        "minecraft:physics": {},
+        "minecraft:collision_box": {
+          "width": 0.35,
+          "height": 0.3
+        },
+        "minecraft:scale": {
+          "value": 0.5
+        }
+      },
+      "minecraft:house_spider_behaviors": {
+        "minecraft:behavior.random_look_around": {
+          "priority": 8,
+          "probability": 0.05
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 10,
+          "speed_multiplier": 0.3
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "1"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/house_spider.json"
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["minecraft:house_spider_base", "minecraft:house_spider_behaviors"]
+        }
+      }
+    }
+  }
+}
